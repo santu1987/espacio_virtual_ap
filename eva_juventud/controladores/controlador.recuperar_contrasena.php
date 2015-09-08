@@ -49,7 +49,7 @@ $mail->AddAddress($correo, $nombres);
 $mail->SMTPAuth = true;
 // credenciales usuario
 $mail->Username = "espacio.virtual.minjuventud@gmail.com";
-$mail->Password = "machurucuto666"; 
+$mail->Password = "asdfghmmmmm666"; 
 if(!$mail->Send()) 
 {
 	$mensaje[0]="Error enviando: " . $mail->ErrorInfo;

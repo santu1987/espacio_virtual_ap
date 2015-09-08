@@ -67,7 +67,7 @@ $mail->AddAddress($correo, $nombres);
 $mail->SMTPAuth = true;
 // credenciales usuario
 $mail->Username = "espacio.virtual.minjuventud@gmail.com";
-$mail->Password = "machurucuto666"; 
+$mail->Password = "asdf666"; 
 if(!$mail->Send()) 
 {
 	die(json_encode("Error enviando: " . $mail->ErrorInfo));
