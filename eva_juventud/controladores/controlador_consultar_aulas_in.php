@@ -1,0 +1,19 @@
+<?php
+session_start();
+require_once("../modelos/modelo.registrar_eva.php");
+//
+$mensaje=array();
+$obj_eva=new espacio_v();
+$rs=$obj_eva->consultar_aulas_in();
+//die(json_encode($rs));
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}
+else
+{
+	die(json_encode($rs));
+}	
+//
+?>

@@ -1,0 +1,44 @@
+<?php
+session_start();
+require("../modelos/modelo.registrar_foro.php");
+require("../modelos/modelo.paginacion_consultas.php");  
+$mensaje=array();
+if(isset($_POST["id_foro"]))
+{
+	if($_POST["id_foro"]!="")
+	{
+		$id_foro=$_POST["id_foro"];
+	}
+	else
+	{	
+		$mensaje[0]="campos_blancos";
+		die(json_encode($mensaje));
+	}	
+}
+else
+{
+	$mensaje[0]="campos_blancos";
+	die(json_encode($mensaje));
+}
+$offset=$_POST["offset"];
+$limit=$_POST["limit"]; 
+$actual=$_POST["actual"];
+$nom_fun="consultar_mensajes_respuestas_foro";
+/////////////////////////////////////////////////
+//creo el objeto
+$obj_foro=new foro();
+$rs=$obj_foro->consultar_foro_respuestas($id_foro,$offset,$limit);
+//die(json_encode($rs));
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}else
+{
+	$obj_paginador=new paginacion($actual,$obj_foro->num_rows2,$nom_fun);
+	$mensaje[0]=$rs;
+	$mensaje[1]=$obj_paginador->crear_paginacion();
+	die(json_encode($mensaje));
+}
+/////////////////////////////////////////////////
+?>

@@ -1,0 +1,63 @@
+<?php
+session_start();
+require("../modelos/modelo.registrar_eva.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+$mensaje=array();
+$recordset=array();
+//$mensaje[0]=$_POST["tipo_formacion"]."-".$_POST["titulo_eva"]."-".$_POST["introduccion_eva"]."-".$_POST["objetivos_eva"]."-".$_POST["unidades_eva"]."-".$_POST["resumen_eva"]."-".$_POST["fecha_activacion_eva"];
+//$mensaje[0]=$_POST["resumen_eva"];
+//die(json_encode($mensaje));
+//validacion
+if((isset($_POST["titulo_eva"]))&&(isset($_POST["introduccion_eva"]))&&(isset($_POST["tipo_formacion"]))&&(isset($_POST["objetivos_eva"]))&&(isset($_POST["unidades_eva"]))&&(isset($_POST["resumen_eva"]))&&(isset($_POST["fecha_activacion_eva"])))
+{
+	if(($_POST["tipo_formacion"]!="0")&&($_POST["titulo_eva"]!="")&&($_POST["introduccion_eva"]!="")&&($_POST["objetivos_eva"]!="")&&($_POST["unidades_eva"]!="")&&($_POST["resumen_eva"]!="")&&($_POST["fecha_activacion_eva"]))
+	{
+		$espacio_virtual=new espacio_v();
+		if((isset($_POST["id_eva"]))&&($_POST["id_eva"]==""))
+		{
+			$id_eva=0;
+		}
+		else
+		{
+			$id_eva=$_POST["id_eva"];
+		}	
+		//asignacion de variables
+		$titulo=$_POST["titulo_eva"];
+		$introduccion=$_POST["introduccion_eva"];
+		$objetivos=$_POST["objetivos_eva"];
+		$unidades=$_POST["unidades_eva"];		
+		$resumen=$_POST["resumen_eva"];
+		$tipo_formacion=$_POST["tipo_formacion"];
+		$opcion_evaluada=$_POST["opcion_evaluada"];
+		$fecha_activacion_eva=$_POST["fecha_activacion_eva"];
+		///instancio el objeto....
+		$recordset=$espacio_virtual->registrar_eva($id_eva,$titulo,$introduccion,$objetivos,$unidades,$resumen,$tipo_formacion,$opcion_evaluada,$fecha_activacion_eva);
+		//die(json_encode($recordset));
+		if($recordset=="error")
+		{
+			$mensaje[0]="error_bd";
+		}else
+		{
+			$mensaje[0]="registro_exitoso";
+			$mensaje[1]=$recordset[0][0];
+			/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+		    $auditoria_eva=new auditoria("Configurar EVA","Actualizacion configuracion de EVA(ID:".$mensaje[1].")");
+		    $auditoria=$auditoria_eva->registrar_auditoria();
+		    if($auditoria==false)
+		    {
+		        $mensaje[0]='error_auditoria';
+		        die(json_encode($mensaje)); 
+		    }
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+		}	
+	}
+	else
+	{	
+		$mensaje[0]="campos_blancos";
+	}	
+}else
+{
+	$mensaje[0]="campos_blancos2";
+}
+die(json_encode($mensaje));
+?>

@@ -1,0 +1,51 @@
+<?php
+session_start();
+require("../modelos/modelo.tipo_evaluacion.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+$mensaje=array();
+$rs=array();
+if(isset($_POST["desc_tipo_evaluacion"]))
+{
+	if($_POST["desc_tipo_evaluacion"]!="")
+	{
+		$tipo_evaluacion=new tipo_evaluacion();
+		if($_POST["id_tipo_evaluacion"]=="")
+		{
+			$id_tipo_evaluacion=0;
+		}
+		else
+		{
+			$id_tipo_evaluacion=$_POST["id_tipo_evaluacion"];
+		}	
+		$rs=$tipo_evaluacion->registrar_tipo_evaluacion($id_tipo_evaluacion,$_POST["desc_tipo_evaluacion"]);
+		//die(json_encode($rs));
+		if($rs=="error")
+		{
+			$mensaje[0]="error_bd";
+		}else
+		{
+			$mensaje[0]="registro_exitoso";
+			$mensaje[1]=$rs[0][0];
+			/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+		    $auditoria_mod=new auditoria("tipo de evaluacion","actualizacion tipo de evaluacion");
+		    $auditoria=$auditoria_mod->registrar_auditoria();
+		    if($auditoria==false)
+		    {
+		        $mensaje[0]='error_auditoria';
+		        die(json_encode($mensaje)); 
+		    }
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			////////////////////////////////////
+		}	
+	}
+	else
+	{	
+		$mensaje[0]="campos_blancos";
+	}	
+}else
+{
+	$mensaje[0]="campos_blancos2";
+}
+die(json_encode($mensaje));
+?>

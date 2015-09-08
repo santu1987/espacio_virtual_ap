@@ -1,0 +1,60 @@
+<!-- -->
+    <!-- Modal para el inicio de session-->
+    <div class="modal fade" id="modal_is" name="modal_is" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" id="cerrar_modal_is" name="cerrar_modal_is" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <p id="cabecera_is" name="cabecera_is"><h3>Registro de Usuario</h3></p>
+            </div>
+                <div class="modal-body" id="cuerpo_is" name="cuerpo_is">
+                <form id="form_is" name="form_is" role="form" class="form-horizontal">
+                   <div class="form_group">
+                        <div class="col-sm-4">
+                          <select name="select_nac_is" id="select_nac_is" class="form-control">
+                            <option id="V" value="V">V</option>
+                            <option id="E" value="E">E</option> 
+                          </select>
+                        </div>
+                        <div class="col-sm-8">
+                           <input type="text" name="n_cedula_is" id="n_cedula_is" placeholder="Ingrese cédula, ejem :18042153" onKeyPress="return valida(event,this,10,8)" onBlur="valida2(this,10,8);longitud(this,8,5);" class="form-control input-sg">
+                        </div>
+                    </div>
+                    <div class="form-group topit4">
+                        <div class="col-sm-12">
+                          <input type="email" class="form-control" id="correo_is" name="correo_is" placeholder="ingrese un correo electr&oacute;nico v&aacute;lido:luis.perez@gmail.com" onblur="correo(this);">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                          <input type="password" class="form-control" id="clave_is" name="clave_is" placeholder="Ingrese 10 d&iacute;gitos, compuestos por n&uacute;meros y letras" onpaste="alert('no puedes pegar');return false" onKeyPress="return valida(event,this,2,10)" onBlur="valida2(this,2,10);validar_longitud_claves(this);">
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">C&oacute;digo de verificaci&oacute;n:</label>
+                        <div class="col-sm-10 texto10">
+                            <div id="wrap" align="center">
+                              <img src="./captcha/get_captcha.php" alt="" id="captcha" />
+                              <br clear="all" />
+
+                              <input name="code" type="text" id="code" placeholder="Ingrese C&oacute;digo " class="form-control" onpaste="alert('no puedes pegar');return false" onKeyPress="return valida(event,this,2,15)" onBlur="valida2(this,2,15);">
+                            </div>
+                            <img src="./captcha/refresh.jpg" width="25" alt="" id="refresh" />
+                        </div>
+                    </div>
+                    <div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-circle"></i>Informaci&oacute;n : Debe ingresar obligatoriamente el c&oacute;digo de verificaci&oacute;n para comprobar que no es un bot
+                    </div>
+                    <div id="lugar_barra">
+                    </div>
+                    <!---->
+                </form>    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_is" name="btn_is">Registrar</button>
+              <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+           </div>
+          </div>
+        </div>
+    </div>
+    <!-- -->

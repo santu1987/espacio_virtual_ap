@@ -1,0 +1,315 @@
+
+#sector
+{
+	float: left;
+	width:100%;
+	height: auto;
+}
+#banner
+{
+	width:100%;
+	height: 60px;
+	/*margin-left: 20%;*/
+	background: #fff;
+}
+#cabecera
+{
+	margin:0 auto;
+	margin-bottom: 5px;
+	background: #fff;
+
+}
+body 
+{
+	background: rgba(0,0,0,.15);
+}
+
+#l_pie
+{
+	/*background: rgba(0,0,0,.100);*/
+	width: 100%;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 43%;
+}
+#l_pie2
+{
+	/*background: rgba(0,0,0,.100);*/
+	width: 100%;
+	/*height: 30px;*/
+	height: 20%;
+	margin-top: 2%;
+}
+.marco
+{
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	margin-top:20px;
+}
+#marco_ced
+{
+	margin-left: 24%;
+}
+/*clase de marco de menu de la app*/
+.menu_marco
+{
+	min-width: 100%;
+	min-height: 40px;
+	background: #fff;
+	position: absolute;
+}
+/*clase del menu principal de administración*/
+.menu_conf
+{
+	font-size: 16px;
+	padding: 4px 4px 0px 20px;
+	float:left;
+	width: 160px;
+	height: 20px;
+}
+.cuadr_con
+{
+	cursor: pointer;
+}
+/*Div prinicpal que contiene los formularios*/
+#contenido
+{
+	/*height: 380px;*/
+	height:30%;
+	background: #fff;
+	/*padding-bottom: 5%;*/
+}	
+/*div que contiene los formuilarios sin tabs*/
+#contenido_form
+{
+	/*height: 380px;*/
+	height:30%;
+	background: #f7f7f7;
+	/*padding-bottom: 5%;*/
+}
+/*Cadro de usuario*/
+#us_in_session
+{
+	float:left;
+}
+/*div con informción de misiones de forma individual perteneciente a la penstaña de consulta individual...*/
+#misiones_listado
+{
+	width: 80%;
+	/*margin-top: 0.5%;*/
+	margin-left: 90px;
+	padding-bottom: 2%;
+}
+/* div que grupa los formularios de consulta individual y consulta masiva*/
+#agrupar_1, #agrupar_2,.agrupar_5
+{
+	/*margin-left: auto;
+	margin-top: 5%;*/
+	margin: 0 auto;/*--esto para centrarlo*/
+	width:70%;
+	height: 100%;
+	display: inline-block;
+	padding-top: 5%;
+	padding-bottom: 2%;
+}
+/* div que grupa el formulario de inicio de session*/
+#agrupar_3
+{
+	margin-left:35%;
+	margin-top: 2%;
+	width:32%;
+	height: 80%;
+	/*padding: 60px 60px 60px 80px;*/
+	padding: 5%;
+	display: inline-block;
+	background-color: #f7f7f7;
+}
+/* div que grupa el formulario de inicio de session*/
+#agrupar_4
+{
+	margin-left:25%;
+	margin-top: 2%;
+	width:32%;
+	height: 80%;
+	padding: 5%;
+	display: inline-block;
+}
+#agrupar_6
+{
+	margin-left:30%;
+	width:60%;
+	height: 80%;
+	padding-bottom: 5%;
+	/*padding-top: 5%;*/
+	display: inline-block;
+	/*background-color: #f7f7f7;*/
+}
+#btn_consultar,#btn_pdf, #btn_pdf_mas, #btn_iniciar, #btn_consulta_csv, #btn_guardar,#btn_limpiar
+{
+	margin-top: 5px;
+}
+/*boton de guardar*/
+/*#btn_guardar
+{
+	float:left;
+	margin-right: 2px;
+}
+/*boton de limpiar
+#btn_limpiar
+{
+	float:left;
+}*/
+#btn_csv
+{
+	margin-top: 30px;
+}
+#inicial
+{
+	width:60%;
+}
+#principal1
+{
+	margin-left: 40%;
+	margin-top: 5%;
+}
+#tit 
+{
+	font-weight: bold;
+}
+#iframe_pdf, #pdf_lista
+{
+	width:100%;
+	height: 65%;
+}
+#info_rec
+{
+	margin-top: 4px;
+}
+#info_lote
+{
+	margin-top: 10px;
+	width:190%;
+}
+/*Codificacion de cuadro principal*/
+#cuadro_principal, #program_body
+{
+	min-width: 80%;
+	/*min-height: 380px;*/
+	min-height: 100%;
+	padding: 0px 0px 0px 0px;
+}
+/*Codificación de cuadro en el que se cargan las consultas y formularios */
+#program_body
+{
+	min-width: 80%;
+	/*min-height: 380px;*/
+	min-height: 100%;
+	margin-top: 20px;
+	padding: 0px 0px 0px 0px;
+}
+/* dimensiones de div perteneciente a consulta individual...*/
+#consulta_individual
+{
+	width:100%;
+	height: 80%;
+}
+/*clave input de pass*/
+.clave
+{
+	margin-top: 6px;
+	width:300px;
+}
+/* texto input inicio sesion nombre us*/
+.texto ,.iniciar
+{
+	width:300px;
+}
+/* texto input formularios*/
+.texto2 
+{
+	width:380px;
+}
+/*contenedor principal de inicio de sesion*/
+#contenedor_iniciar_sesion
+{
+	height: 400px;
+	background-color: #fff;
+}
+/*circulo de inicio de sesion*/
+.img_inicio
+{
+	width: 30%;
+	height: 30%;
+	margin-left:32%;
+}
+.img_us2
+{
+	width:  15%;
+	height: 15%;
+}
+.mensaje_consulta
+{
+	height: 80px;
+	width:  70%;
+}
+.info_benef
+{
+	width:  70%;
+}
+#nom_us
+{
+	margin-left: 50%;
+	cursor:pointer;
+	text-decoration: none;/*quitar subrayado*/
+}
+/*clase para hacer los select mas pequenos*/
+.select-peque
+{
+	width:350px;
+	height: 36px;
+}
+/*label de lotes*/
+#lotes
+{
+	margin-top: 5px;
+}
+/* barra de titutlo*/
+#barra_tit
+{
+	display: inline;
+}
+/* imagen circulo superior us*/
+.img_us1
+{
+	width:30px;
+	height:30px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#contenedor_barra
+{
+	width: 400px;
+}
+#registro_us
+{
+	margin-top: 10px;
+}
+#titulo_no_tab
+{
+	font-size: 20px;
+
+}
+/*clase para interlineados*/
+.topit
+{
+	
+	padding-top: 50px;
+}
+/*clase para titutlos personalizados*/
+.titles_per
+{
+	padding: 2% 2% 0 1%;
+}

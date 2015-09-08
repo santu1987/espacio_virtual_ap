@@ -1,0 +1,49 @@
+<?php
+session_start();
+require("../modelos/modelo.tipo_usuario.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+$mensaje=array();
+$rs=array();
+if(isset($_POST["desc_tipo_us"]))
+{
+	if($_POST["desc_tipo_us"]!="")
+	{
+		$tipo_usuario=new tipo_us();
+		if($_POST["id_tipo_us"]=="")
+		{
+			$id_tipo_us=0;
+		}
+		else
+		{
+			$id_tipo_us=$_POST["id_tipo_us"];
+		}	
+		$rs=$tipo_usuario->registrar_tipo_usuario($id_tipo_us,$_POST["desc_tipo_us"]);
+		//die(json_encode($rs));
+		if($rs[0][0]=="error")
+		{
+			$mensaje[0]="error_bd";
+		}else
+		{
+			$mensaje[0]="registro_exitoso";
+			$mensaje[1]=$rs[0][0];
+			/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+		    $auditoria_mod=new auditoria("Tipo de usuario","actualizacion tipo de usuario");
+		    $auditoria=$auditoria_mod->registrar_auditoria();
+		    if($auditoria==false)
+		    {
+		        $mensaje[0]='error_auditoria';
+		        die(json_encode($mensaje)); 
+		    }
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+		}	
+	}
+	else
+	{	
+		$mensaje[0]="campos_blancos";
+	}	
+}else
+{
+	$mensaje[0]="campos_blancos2";
+}
+die(json_encode($mensaje));
+?>

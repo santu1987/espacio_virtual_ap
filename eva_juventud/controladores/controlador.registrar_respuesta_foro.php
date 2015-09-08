@@ -1,0 +1,44 @@
+<?php
+session_start();
+require("../modelos/modelo.registrar_foro.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+$mensaje=array();
+if((isset($_POST["mensaje"]))&&(isset($_POST["id_foro"])))
+{
+	if(($_POST["mensaje"]!="")&&($_POST["id_foro"]!=""))
+	{
+		$mensaje_foro=$_POST["mensaje"];
+		$id_foro=$_POST["id_foro"];
+	}
+	else
+	{
+		$mensaje[0]="campos_blancos";
+		die(json_encode($mensaje));
+	}	
+}
+else
+{
+	$mensaje[0]="campos_blancos";
+	die(json_encode($mensaje));
+}
+$obj_foro=new foro();
+$rs=$obj_foro->registrar_mensaje_foro_respuesta($id_foro,$mensaje_foro);
+//die(json_encode($rs));
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}else
+{
+	/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+    $auditoria_cur=new auditoria("Responder coment","publicacion(ID:".$id_foro.")");
+    $auditoria=$auditoria_cur->registrar_auditoria();
+    if($auditoria==false)
+    {
+        $mensaje[0]='error_auditoria';
+        die(json_encode($mensaje)); 
+    }
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	die(json_encode($rs));
+}
+?>

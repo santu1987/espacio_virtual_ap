@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>Basic Report</title>
+ 
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.js'></script>
+ 
+<!--
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css"/>
+-->
+  
+  <style type='text/css'>
+    
+  </style>
+  
+<script type='text/javascript'>//<![CDATA[ 
+ 
+function renderPdf(imgData) {
+    var doc = new jsPDF();
+ 
+    doc.setFontSize(40);
+    doc.text(35, 25, "This is a value report");
+    doc.addImage(imgData, 'JPEG', 15, 40, 400, 100);
+    doc.output('datauri');
+ 
+    doc.addPage();
+    doc.text(20, 20, 'Do you like that?');
+}
+ 
+$(function(){
+    /**
+     * Create a global getSVG method that takes an array of charts as an argument
+     */
+    Highcharts.getSVG = function(charts) {
+        var svgArr = [],
+            top = 0,
+            width = 0;
+ 
+        $.each(charts, function(i, chart) {
+            var svg = chart.getSVG();
+            svg = svg.replace('<svg', '<g transform="translate(0,' + top + ')" ');
+            svg = svg.replace('</svg>', '</g>');
+ 
+            top += chart.chartHeight;
+            width = Math.max(width, chart.chartWidth);
+ 
+            svgArr.push(svg);
+        });
+ 
+        return '<svg height="'+ top +'" width="' + width + '" version="1.1" xmlns="http://www.w3.org/2000/svg">' + svgArr.join('') + '</svg>';
+    };
+ 
+    /**
+     * Create a global exportCharts method that takes an array of charts as an argument,
+     * and exporting options as the second argument
+     */
+    Highcharts.exportCharts = function(charts, options) {
+        var svg = Highcharts.getSVG(charts);
+ 
+        var canvas = document.createElement('canvas');
+        canvas.setAttribute('width', 500);
+        canvas.setAttribute('height', 500);
+ 
+        if (canvas.getContext && canvas.getContext('2d')) {
+            canvg(canvas, svg);
+ 
+            var image = canvas.toDataURL("image/jpeg");
+            renderPdf(image);
+            //window.location.href = image;
+        }
+    };
+ 
+    var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container1',
+        },
+        title: {
+            text: 'Some chart'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        series: [{
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        }]
+    });
+ 
+    var chart2 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container2',
+            type: 'column'
+        },
+        title: {
+            text: 'Another chart'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+ 
+        series: [{
+            data: [176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0]
+        }]
+    });
+ 
+    $('#export').click(function() {
+        Highcharts.exportCharts([chart1, chart2]);
+    });
+});
+ 
+//]]>  
+ 
+</script>
+ 
+</head>
+ 
+<body>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+<script src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> 
+ 
+<script src="http://cdn.immex1.com/js/jspdf/jspdf.js"></script>
+<script src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.addimage.js"></script>
+<script src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.standard_fonts_metrics.js"></script>
+<script src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.split_text_to_size.js"></script>
+<script src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.from_html.js"></script>
+ 
+<div id="container1" style="height: 200px"></div>
+<div id="container2" style="height: 200px"></div>
+ 
+<button id="export">Export</button>
+</body>
+ 
+</html>

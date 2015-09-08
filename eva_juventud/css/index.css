@@ -1,0 +1,1325 @@
+body
+{
+	/*background-color: #F1E8E8;*/
+	background-color: #EFEFF5;
+}
+#sector
+{
+	float: left;
+	width:100%;
+	height: auto;
+}
+/*configuración del banner*/
+#banner
+{
+	/*width:100%;
+	height: 60px;*/
+	/*margin-left: 20%;*/
+	background: #fff;
+}
+/*configuración de el div interno al banner*/
+#cabecera
+{
+
+	background-color: #323232;
+	width:100%;
+	position:relative;
+	z-index:300;
+	float: left;
+}
+/*imagen de usuario*/
+.img_us
+{
+	width:50px;
+	height: 50px;
+	padding: 5px 3px 6px 2px;
+	float: right;
+}
+/*imagen de usuario_foro*/
+.img_us_foro
+{
+	width:5%;
+	padding: 5px 3px 6px 2px;
+	float: right;
+	margin-left: 50px;
+}
+/*Para la imagen del facilitador*/
+.img_fac_in
+{
+	width:90px;
+	height: 80px;
+	padding: 5px 3px 6px 2px;
+	float: right;
+	margin-left: 3%;
+	margin-top: 2%;
+	background-size: 20px 20px;
+}
+#botonera
+{
+	margin-left: 20%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width:70%;
+	/*background-color:#e7e7e7;*/
+}
+.text_largos
+{
+	height: 100px;
+}
+.text_largos2
+{
+	height: 200px;
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*#botonera2
+{
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width:80%;
+}*/
+/*configuración del cuerpo del sistema*/
+
+/*titutlos de los formularios*/
+.title_form
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+/*titulo del sistema*/
+#container_titleh1
+{
+	position: relative;
+	z-index: 300;
+	width: 100%;
+	float:left;
+}
+/*configuración del pie de pagina*/
+#l_pie
+{
+	/*background: rgba(0,0,0,.100);*/
+	width: 60%;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 35%;
+	color: #fff;
+}
+/*Para la imagen de pie de página..*/
+.img_foot
+{
+	width: 7%;
+	margin-left: 48%;
+}
+#l_pie2
+{
+	/*background: rgba(0,0,0,.100);*/
+	width: 100%;
+	/*height: 30px;*/
+	height: 20%;
+	margin-top: 2%;
+}
+/*clase para el entorno que esta luego del titulo...*/
+.marco
+{
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	/*margin-top:20px;*/
+}
+#marco_ced
+{
+	margin-left: 24%;
+}
+/*clase de marco de menu de la app*/
+.menu_marco
+{
+	min-width: 100%;
+	min-height: 40px;
+	background: #fff;
+	position: absolute;
+}
+/*clase del menu principal de administración*/
+.menu_conf
+{
+	font-size: 16px;
+	padding: 4px 4px 0px 20px;
+	float:left;
+	width: 160px;
+	height: 20px;
+}
+.cuadr_con
+{
+	cursor: pointer;
+}
+/*Div principal que contiene los formularios*/
+#contenido
+{
+	/*height: 380px;*/
+	height:30%;
+	background: #fff;
+	/*padding-bottom: 5%;*/
+}	
+/*div que contiene los formuilarios sin tabs*/
+#contenido_form
+{
+	/*height: 380px;*/
+	height:30%;
+	background: #f7f7f7;
+	/*padding-bottom: 5%;*/
+}
+/*Cadro de usuario*/
+#us_in_session
+{
+	float:left;
+}
+/*para los link de etiquetas a*/
+.link_page
+{
+	float:left;
+	margin-left:4%;
+	padding-top:4%;
+	cursor:pointer;
+}
+/*div registrar us*/
+#registrar_us,#registrar_contenido
+{
+	width: 100%;
+	height: 100%;
+	/*background-color: #fff;*/
+}
+/* div que grupa los formularios de consulta individual y consulta masiva*/
+#form_1, #agrupar_2,.agrupar_5
+{
+	position: absolute;
+	top: 15%;
+	left: 28%;
+	width: 40%;
+	height: auto;
+	padding: 2%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #aaa;
+}
+/*Para los formularios que describen al aula virtual*/
+#form_2
+{
+	position: absolute;
+	top: 15%;
+	left: 22%;
+	width: 60%;
+	height: auto;
+	padding: 2%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #aaa;
+}
+/*Botones de los formularios*/
+.btn-form
+{
+	width:100%;
+}
+/* div */
+#agrupar_3
+{
+	/*margin-left:35%;
+	margin-top: 13%;
+	margin-bottom: 2%;
+	width:32%;
+	padding: 5% 4% 2%;
+	display: inline-block;
+	background-color: #f7f7f7;
+	border-style:solid;
+	border-color: #F5F5F5;
+	box-shadow:5px 5px 10px;*/
+	left: 35%;
+	top: 30%;
+	margin-bottom: 2%;
+	width: 32%;
+	padding: 60px 60px 60px 80px;
+	padding: 5% 4% 2%;
+	display: inline-block;
+	background-color: #f7f7f7;
+	border-style: solid;
+	border-color: #F5F5F5;
+	box-shadow: 5px 5px 10px;
+	position: absolute;
+}
+/* div que grupa el formulario de inicio de session*/
+#contenedor_is
+{
+	
+	left: 35%;
+	top: 40%;
+	margin-bottom: 10%;
+	width: 32%;
+	padding: 5% 4% 2%;
+	display: inline-block;
+	border-style: solid;
+	border-color: #F5F5F5;
+	box-shadow: 5px 5px 10px;
+	position: relative;
+	background-color: #f7f7f7;
+}
+/* div que grupa el formulario de inicio de session*/
+#agrupar_4
+{
+	margin-left:25%;
+	margin-top: 2%;
+	width:32%;
+	height: 80%;
+	padding: 5%;
+	display: inline-block;
+}
+#btn_consultar,#btn_pdf, #btn_pdf_mas, #btn_iniciar, #btn_consulta_csv, #btn_guardar,#btn_limpiar
+{
+	margin-top: 5px;
+}
+/*boton de guardar*/
+/*#btn_guardar
+{
+	float:left;
+	margin-right: 2px;
+}
+/*boton de limpiar
+#btn_limpiar
+{
+	float:left;
+}*/
+#btn_csv
+{
+	margin-top: 30px;
+}
+#inicial
+{
+	width:60%;
+}
+#principal1
+{
+	margin-left: 40%;
+	margin-top: 5%;
+}
+#tit 
+{
+	font-weight: bold;
+}
+/*Para el titulo del formulario del EVA*/
+.titulo_eva
+{
+	background-color: #2fc2ef;
+	box-shadow: 2px 2px 2px #aaa;
+	color: #fff;
+	text-align: center;
+}
+/* valor de vista de pdf*/
+#pdf_lista
+{
+	width:100%;
+	/*height: 65%;*/
+}
+/*valor del iframe donde se cargan los pdf....*/
+#iframe_pdf
+{
+	width:100%;
+	height: 600px;/*se debe cambiar por %*/
+}
+#info_rec
+{
+	margin-top: 4px;
+}
+#info_lote
+{
+	margin-top: 10px;
+	width:190%;
+}
+
+/*Codificacion de cuadro principal*/
+#cuadro_principal, #program_body
+{
+	min-width: 100%;
+	height: 90%;
+	/*background-color: #F1E8E8;*/
+	background-color: #EFEFF5;
+	padding: 0px 0px 0px 0px;
+	overflow: visible;
+	position: absolute;
+}
+/*Codificación de cuadro en el que se cargan las consultas y formularios */
+/*#program_body
+{
+	top:130px;
+	min-width: 80%;
+	/*min-height: 380px;*/
+	/*min-height: 100%;
+	padding: 0px 0px 0px 0px;
+}*/
+/* dimensiones de div perteneciente a consulta individual...*/
+#consulta_individual
+{
+	width:100%;
+	height: 80%;
+}
+/*clave input de pass*/
+.clave
+{
+	margin-top: 6px;
+}
+/* texto input inicio sesion nombre us*/
+.texto ,.iniciar
+{
+	width:300px;
+}
+/* texto input formularios*/
+.texto2
+{
+	width:50%;
+}
+/* texto input formularios*/
+.texto3
+{
+	width:30%;
+}
+.texto4
+{
+	width:300px;
+}
+.texto5
+{
+	width:15%;
+}
+.texto6
+{
+	width:35%;
+}
+.texto7
+{
+	width: 32%;
+}
+/*Para la ci, de inicio de sesion*/
+.texto8
+{
+	width: 63%;
+}
+/*Para la nacionalidad de inicio de sesion*/
+.texto9
+{
+	width:20%;
+}
+/*Para correo electrónico en inicio de session*/
+.texto10
+{
+	width:80%;
+	margin-left: 1%;
+}
+/*contenedor principal de inicio de sesion*/
+#contenedor_iniciar_sesion
+{
+	width: 100%;
+	height: 90%;
+	background-color: #fff;
+	position: relative;
+}
+/*circulo de inicio de sesion*/
+.img_inicio
+{
+	/*width: 5%;
+	height: 10%;
+	position: absolute;
+	top: 26%;
+	left: 48%;*/
+	height: 22%;
+	position: absolute;
+	top: 5%;
+	left: 41%;
+}
+
+/*nombre del usuario que inicio session*/
+#nombre_us2
+{
+	float:left;
+	color: #fff;
+	padding: 10px ;
+	cursor:pointer;
+}
+.img_us2
+{
+	width:  15%;
+	height: 15%;
+}
+.img_us3
+{
+	width: 80px;
+	height: 50px;
+	padding: 5px 3px 6px 2px;
+	float: right;
+	margin-left: 50px;
+}
+.mensaje_consulta
+{
+	height: 80px;
+	width:  70%;
+}
+.info_benef
+{
+	width:  70%;
+}
+#nom_us
+{
+	margin-left: 50%;
+	cursor:pointer;
+	text-decoration: none;/*quitar subrayado*/
+}
+/*text para la caja de texto de buscar*/
+#text_buscar
+{
+	width:100%
+}
+/*clase para hacer los select mas pequenos*/
+.select-peque
+{
+	width:59%;
+	height: 36px;
+}
+/*label de lotes*/
+#lotes
+{
+	margin-top: 5px;
+}
+/* barra de titutlo*/
+#barra_tit
+{
+	display: inline;
+}
+/* imagen circulo superior us*/
+.img_us1
+{
+	width:30px;
+	height:30px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#contenedor_barra
+{
+	width: 400px;
+}
+#registro_us
+{
+	margin-top: 10px;
+}
+#titulo_no_tab
+{
+	font-size: 20px;
+
+}
+/*clase para interlineados*/
+.topit
+{
+	padding-top: 30px;
+}
+.topit2
+{
+	padding-top: 30px;
+}
+.topit3
+{
+	padding-top: 70px;
+}
+.topit4
+{
+	padding-top: 60px;
+}
+/*topit para registrar a través de modals emergentes...*/
+.topit5
+{
+	padding-top: 13%;
+}
+/*top it para los modals*/
+.topit6
+{
+	padding-top: 5%;
+}
+/*top it para texarea*/
+.topit_text_area
+{
+	padding-top:14%;
+}
+/*botones al lado de los text area*/
+.btn_txt
+{
+	float:left;
+}
+/**/
+.conf_label
+{
+	padding-top: 3px;
+}
+/*clase para titutlos personalizados*/
+.titles_per
+{
+	padding: 2% 2% 0 1%;
+}
+.barra_us
+{
+	width:100%;
+	height: 50px;
+	background-color: #e2e6e5;
+}
+/*footer imagen*/
+
+/*pie de pagina*/
+.contendor_pie_pagina
+{
+	min-width: 100%;
+	height: 10%;
+	padding: 0px 0px 0px 0px;
+	position: absolute;
+	background-color: #323232;
+	top: 90%;
+}
+.contendor_pie_pagina2
+{
+	left: 0px;
+	bottom: 0px;
+	min-width: 100%;
+	margin:0;
+	background-color: #323232;	
+	clear: both;
+}
+#contenedor 
+{ 
+	min-height:100%;
+	height: auto!important;
+	height:100%;
+}
+
+.wrapper 
+{
+   min-height:100%;
+   position:relative;
+}
+/*pantalla inicial*/
+#pantalla_inicial
+{
+	width:100%;
+	height: 600px;
+	background-color: #fff;
+}
+#modalidad_estudio,#tipo_usuario,#asignar_p_us,#cambio_clave
+{
+	width: 100%;
+		
+	/*background-color: #fff;*/
+}
+/*recuperar contraseña*/
+.rec_cont
+{
+	float: left;
+	margin-left: 24%;
+	padding-bottom: 4%;
+	padding-top: 4%;
+}
+/* imagen de cintillo 200 años*/
+.imagen_j2
+{
+	margin-left: 50%;
+}
+/*css del pop over de usuario*/
+#cuerpo_pop
+{
+	width:200px;
+	margin-bottom: 5px;
+}
+#nombre_popup
+{
+	float:left;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+#correo_popup
+{
+	float:right;
+	font-size: 10px;
+}
+/*para el paginador*/
+#paginacion_modal
+{
+	width:100%;
+	height:70px;
+	margin-left:4%;
+}
+.tam_alert_divr
+{
+	width: 70%;
+}
+/*para definir propiedades de el preview de video*/
+.conf_video
+{
+	margin-bottom: 4%;
+	width: 60%;
+	margin-left: 20%;
+}
+.img_menu
+{
+	color: #fff;
+}
+/*configuración de engrane de menú*/
+#engrane
+{
+	float:left;
+	color: #fff;
+	padding: 10px ;
+	/*width: 170px;*/
+	text-align: right;
+	cursor:pointer;
+}
+/*Botones de menu de estudiante*/
+.btn_menu_est
+{
+	float:left;
+	color: #fff;
+	padding: 10px ;
+	/*width: 170px;*/
+	text-align: right;
+	cursor:pointer;
+}
+/*Configuracion de botones de menú*/
+#op_menu:hover , #op_perfil:hover , #op_puntuaciones:hover , #op_ayuda:hover
+{
+	color:#2fc2ef;
+}
+
+#nombre_popup
+{
+	color:#000;
+}
+/*configuraciond e cuerpo de inicio de session*/
+.cuerpo_is
+{
+	height:900px;
+	width: 800px;
+}
+/*Wrap que contiene el captcha*/
+#wrap{
+	border:solid #CCCCCC 1px;
+	width:203px;
+	-webkit-border-radius: 10px;
+	float:left;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding:3px;
+
+}
+/*Imagen de refresh del captcha*/
+img#refresh{
+	float:left;
+	margin-top:30px;
+	margin-left:4px;
+	cursor:pointer;
+}
+/*Bloque del menu de estudiante*/
+#bloque_mvert
+{
+	margin-top: 4%;
+	border-color: #428bca;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow:2px 2px 5px;
+	float: left;
+}
+/*Bloque del div donde se cargaran los formularios*/
+#cuerpo_programa_est
+{
+	float:left;
+	width:84%;
+}
+.nav-menu-us
+{
+	margin-top: 4%;
+	width:15%;
+	border-color: #428bca;
+	border-radius: 2px;
+	background-color: #fff;
+}
+#bloque_us
+{
+	position: absolute;
+	width:100%;
+	/*background-color:#d9d9d9;*/
+	background-color: #000;
+	left:20%;
+}
+/*Para opciones del menu de estudiantes*/
+#ev_pe , #anot , #conect_eva , #grp_tr , #fac_eva , #aulas_v
+{
+	color:#000;
+}
+/*Para opciones del menu de estudiantes*/
+#ev_pe:hover , #anot:hover , #conect_eva:hover , #grp_tr:hover , #fac_eva:hover , #aulas_v:hover
+{
+	color:#fff;
+}
+/*cuadro de los formularios*/
+#frame_form
+{
+	width: 90%;
+	height: 80%;
+	display: inline-block;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	position: relative;
+	left:15%;
+}
+/*Para los titulos de las tablas*/
+.titles_table
+{
+	margin-top: 5%;
+}
+/*Para la tabla de consultas que cubre toda la pantalla*/
+.tabla_body, .cuerpo_body
+{
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 2px 2px 2px #aaa;
+	width: 95%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+	margin-top: 8%;
+}
+/*para las dimensiones del aula virtual*/
+.cuerpo_aula
+{
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 2px 2px 2px #aaa;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 7%;
+	margin-bottom: 5%;
+}
+/*para el cuerpo del formulario de resumen eva*/
+.cuerpo_body
+{
+	margin-top: 5%;
+}
+/*Para el filtro de nombre de eva*/
+#f_nombre_eva
+{
+	width: 100%;
+	margin-bottom: 2%;;
+}
+/*Para la configuración de la cabecera de la tabla..*/
+#cabecera_tabla,#cabecera_tabla_adm,#cabecera_tabla_un,#cabecera_tabla_ev,#cabecera_tabla_rep_estudiantes,#cabecera_tabla_aprobados_rep,#cabecera_tabla_notas,#cabecera_tabla_est_det,#cabecera_tabla_est_apr,#cabecera_tabla_beneficiados,#cabecera_tabla_us,#cabecera_tabla_auditoria
+{
+	background-color: #2fc2ef;
+	color:#fff;
+}
+/*Para los panel de las aulas*/
+.panel_aula
+{
+	width: 90%;
+	margin-left: 5%;
+	text-align : justify;	
+}
+/*Para el div de la imagen del facilitador en la consulta del resumen del aula*/
+.img_facilitador
+{
+	height: 100px;
+	padding: 5px 3px 6px 2px;
+}
+.img_eva
+{
+	width: 90px;
+  	height: 90px;
+  	padding: 5px 3px 6px 2px;
+  	float: left;
+}
+/*Para la imagen de facilitador*/
+.img_fa
+{
+	height: 100px;
+	width: 25%;
+	padding: 5px 3px 6px 2px;
+	float: right;
+	margin-left: 20%;
+	border-radius: 50%;
+}
+#img_uss
+{
+	height: 100px;
+	width: 45%;
+	padding: 5px 3px 6px 2px;
+	float: right;
+	margin-left: 20%;
+	border-radius: 50%;
+}
+/*Para el titulo del facilitador*/
+#facilitador_h3
+{
+	margin-top: 10%;
+}
+/*Para configurar el planel del facilitador*/
+.panel_aula_fac
+{
+	width: 75%;
+	margin-left: 20%;
+}
+/*Para configurar margen de los botones*/
+.btn-izq
+{
+	margin-left: 80%;
+}
+/*Para los titulos de los resumenes de contenidos en el formularo de aula virtual*/
+#titulo_resumen,#titulo_material_multimedia
+{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/*Para el párrafo*/
+#resumen_contenido,#titulo_pregunta,#cuerpo_preguntas,#div_mensaje_nota
+{
+	margin-left: 5%;
+	margin-right:5%; 
+	margin-bottom:6%;
+	text-align: justify;
+}
+/*Para el div de los archivos adjuntos en el aula virtual..*/
+#archivos_pdf
+{
+	cursor:pointer;
+}
+/*Para el boton bajar al contenido Documental*/
+.boton_ar
+{
+	float:right;
+	margin-left: 1%;
+}
+/*Para el btn de ir a archivos*/
+#ir_archivos
+{
+	margin-right: 1%;
+}
+/*Para btn_anotaciones*/
+
+/*Para el div que activa las pruebas*/
+.div_inf_prueba
+{
+	width: 55%;
+	margin: 0 auto;
+	margin-top: 1%;	
+}
+/*Para botonera de pantala de evaluaciones*/
+.botonera_eva
+{
+	margin-left: 70%;
+	margin-bottom: 2%;
+}
+/*Para mensajes de respuesta correcta*/
+.color_respuesta_correcta
+{
+	color:#3c763d;
+}
+/*Para mensajes de respuesta correcta*/
+.color_respuesta_incorrecta
+{
+	color:#F70606;
+}
+/*Para boton  de carga de anotaciones por aula*/
+#form_aulas
+{
+	margin-bottom: 2%;
+}
+/*Para textarea de discusion de contenido*/
+#mensaje_foro
+{
+	margin-top: 2%;
+}
+/*Para el boton de publicar de la discusion*/
+#btn_publicar_mensaje,#btn_publicar_mensaje_resp
+{
+	margin-left: 95%;
+}
+/*Para los nombres de los ususarios del foro*/
+#nombre_us_foro
+{
+	margin-left: 15%;
+	font-weight: bold;
+}
+/*Para el estilo de la caja del mensaje del usuario*/
+.mensaje_foro
+{
+	margin-left: 15%;
+	color:#498ec4;
+	font-size: 15pt;
+}
+/*Para los estilos del contenedor de los mensajes de usuarios del foro*/
+.contenedor_us
+{
+	overflow: hidden;
+	height: 30%;
+	padding: 1%;
+	/*padding-bottom: 5%;*/
+	background-color: #fff;
+	text-align: justify;
+	box-shadow: 2px 2px 2px #aaa;
+	margin-bottom: 2%;
+}
+/*Para contenedor principal de mensajes de foro*/
+.contenedor_principal_foro_us
+{
+	padding: 2% 2% 2% 2%;
+}
+/*Para el contenedor principal del foro*/
+.contenedor_principal_foro_us
+{
+	background-color: #efeff5
+}
+/*Para la botonera inferior*/
+.responder_mensaje
+{
+	margin-left: 65%;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*Para el megusta, agregar,ver usuarios perfil*/
+.megusta_mensaje,.agregar_us,.ver_us,.ver_us_pi
+{
+	margin-left: 1%;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*Para ver usuarios*/
+.ver_us
+{
+	margin-left: 60%;
+}
+/*Para ver usuarios y facilitadores de pantalla inicial*/
+.ver_us_pi
+{
+	margin-left: 40%;
+}
+.ver_us2
+{
+	margin-left: 75%;
+	cursor: pointer;
+}
+/*Para el mouse hover de responder mensaje y me gusta mensaje*/
+.responder_mensaje:hover,.megusta_mensaje:hover
+{
+	color:#f3702b;
+}
+/*Para el mouse clic de responder mensaje y me gusta mensaje*/
+.responder_mensaje:visited,.megusta_mensaje:visited
+{
+	color:#23adef;
+}
+/*Para qe los elementos de los formularios dinámicos desaparezcan*/
+.desaparecer
+{
+	display: none;
+}
+/* Para elementos distribuidos en pantalla */
+#introduccion_panel,#resumen_panel,#objetivos_panel
+{
+	text-align: justify;
+	margin-bottom: 2%;
+}
+/* Para imagen del aula en resumen */
+.img_aula_x
+{
+	padding: 2% 2% 2% 2%;
+	width: 100%;
+	height: 15%;
+	margin-top: 10%;
+
+}
+/* Para contendor de imagen en pantalla*/
+.contenedor_img_aula
+{
+	margin-left: 2%;
+	width: 10%;
+	height: 70%;
+}
+/* Para contenedor de introduccion de resumen aula*/
+.contenedor_int
+{
+	margin-right: 5%;
+	margin-left: 14%;
+}
+/* para columnas de objetivos y unidades*/
+.row_resumen
+{
+	margin-left: 0.55%; 
+}
+/* Para contenedor de facilitador en resumen aula*/
+#contenedor_facilitador
+{
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	margin-top:4%;
+	margin-bottom: 2%;
+}
+/*Para panel de facilitador en resumen de aula*/
+#facilitador_panel
+{
+	text-align: center;	
+}
+/*Para el contenedor de titulo*/
+#contenedor_aulas1,#contenedor_aulas2, #contenedor_aulas3
+{
+	position: relative;
+	width: 93%;
+	left: 2.5%;
+	display: inline-block;
+}
+/*Para el contenedor que traera la informacion de los profesores*/
+#contenedor_aulas2,#contenedor_aulas3
+{
+	margin-top: 2%;
+}
+/*Para la pantalla inicial*/
+.in_aulas
+{
+	position: relative;
+	margin-top: 3%;
+	margin-left: 2%;
+	left: 4%;
+	width: 20%;
+	height: 60%;
+	padding: 2%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #aaa;
+	display: inline-block;
+}
+/*Para el Thumbnail mde pantalla inicial*/
+.re-cuadro
+{
+	width:100%;
+	height: 100%
+}
+/* Contenedor de aulas de la consulta de noticias*/
+#contenedor_aulas,
+{
+	/* height:100%;*/
+}
+#contenedor_au
+{
+	margin-bottom: 1%;
+	height: 420px;
+}
+/* Contenedor de parraf_texto*/
+#parrafo_texto
+{
+	height: 170px;
+}
+/* Para muestra de imagen*/
+.img_eva_us
+{
+	width:50%;
+	margin-top: 5%;
+}
+/*Para div que contendra el carusel de la pantalla inicial*/
+.carusel_in
+{
+	position: relative;
+	width:90%;
+	top: 12%;
+	left:4%;	
+	margin-bottom: 3%;
+}
+/*Para las imagenes de un carusel*/
+.img_carusel
+{
+	width:100%;
+}
+/*Para el titulo principal del web*/
+#contenedor_titulo_p
+{
+	position: relative;
+	width: 90%;
+	left: 4%;
+	margin-top: 3%;
+	width: 93%;
+	left: 2.5%;
+}
+/*Para padre articulos*/
+#padre_articulos
+{
+}
+#contenedor_rec
+{
+}
+/*Para los recuadros de navegación*/
+.navegacion_rec
+{
+	position: relative;
+	width:28%;
+	left:3%;
+	float:left;
+	margin-left: 2%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #aaa;
+	margin-top: 3%;
+	cursor: pointer;
+}
+/*Para el recuadro de ayuda*/
+#mensaje_ayuda
+{
+	position: relative;
+	margin-top: 3%;
+	margin-right: 2%;
+	width: 100%;
+	float: left;
+}
+/**/
+#baja_seccion2
+{
+	margin-top: 20%;
+}
+/*Para la imagen del logo de juventud*/
+#img_juventud
+{
+	cursor:pointer;
+}
+/*Para el marco de facilitadores*/
+.facilitador_consulta
+{
+	position: relative;
+	width:80%;
+	margin-left: 6%;
+	margin-right: 2%;
+	margin-top:2%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #aaa;
+	float: left;
+}
+/*Para marco de usuarios en consulta*/
+.us_visualizar
+{
+	position: relative;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 2%;
+	margin-top: 2%;
+	background-color: #EDEDED;
+	box-shadow: 1px 1px 3px #aaa;
+	float: left;
+}
+/*Para el cuadro inferior*/
+#ir_perfil_fac
+{
+	margin-bottom: 5%;
+}
+#agregar_us
+{
+	margin-left: 2%;
+}
+/*Para el estilo de la caja del mensaje del usuario*/
+.mensaje_fac_in
+{
+	margin-top: 5%;
+	margin-left: 15%;
+	color:#498ec4;
+	font-size: 15pt;
+}
+/*Para contenedor de facilitador*/
+#contenedor_facilitadores,#contenedor_usuarios_rec
+{
+	margin-left: 5%;
+}
+/*Para los contenedores de las noticias y rss*/
+#contenedor_aulas4,#contenedor_aulas5
+{
+	width: 46.5%;
+	left: 2.5%;
+}
+
+/*Para los div que contienen las noticias y las rss*/
+#cuerpo_noticias,#cuerpo_rss
+{
+	text-align: justify;
+	background-color: #fff;
+	height:200px;
+	box-shadow: 2px 2px 2px #aaa;
+	margin-left: 5%;
+}
+/*Para el div de video de registrar unidades*/
+.margen{
+	margin-top: 5%;
+	margin-left: 15%;
+	color:#498ec4;
+	font-size: 15pt;
+}_video
+{
+	margin-bottom: 2%;
+}
+/*Para todos los td*/
+td 
+{
+	text-align: justify;
+}
+
+/*Para el recuadro principal de usuarios*/
+.cuerpo_est_pr
+{
+	background-color: #d3d6d4;
+}
+/*Para la botonera de mensajes de usuarios*/
+#botonera_mensajes_us
+{
+	margin-bottom: 2%;
+}
+/*Para el login de los usuarios dentro de su consulta*/
+#nombre_us_consulta
+{
+	margin-left: 15%;
+	margin-top: 4%;
+	font-weight: bold;	
+}
+/*Para el campo debajo del titulo principal*/
+.mensaje_uns_con_in
+{
+	margin-left: 15%;
+	color:#498ec4;
+	font-size: 15pt;
+}
+/*Para la imagen de los usuarios registrados*/
+.img_us_perfil
+{
+	height: 100px;
+	padding: 5px 3px 6px 2px;
+	float: left;
+	margin-left: 40%;
+	border-radius: 50%;
+}
+/*Para el conetnedor de contacto de usuario*/
+#contenedor_us_consulta
+{
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	margin-top:4%;
+	margin-bottom: 2%;	
+}
+/*Para el cuadro contenedor del grafico de notas*/
+#cuadro_grafica
+{
+	margin-top: 25%;
+}
+/*Para los th que forman parte de la tabla*/
+.izquierda
+{
+	text-align: left;
+}

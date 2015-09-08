@@ -1,0 +1,29 @@
+<?php
+/////////////////
+session_start();
+require("../modelos/modelo.registrar_evaluacion.php");
+$mensaje=array();
+if((isset($_POST["id_contenido"]))&&(isset($_POST["id_evaluacion"])))
+{
+	$id_unidad=$_POST["id_contenido"];
+	$id_evaluacion=$_POST["id_evaluacion"];
+}	
+else
+{
+	$mensaje[0]="campos_blancos";
+	die(json_encode($mensaje));
+}
+$obj_evaluacion=new evaluacion();
+$rs=$obj_evaluacion->consulta_evaluacion_respuestas_correctas($id_unidad,$id_evaluacion);
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}else
+{
+	/*$rs2=$obj_evaluacion->cargar_notas($id_evaluacion);
+	if($rs2=="error"){ $mensaje[0]="error_cargar_notas";die(json_encode($mensaje)); }*/
+	die(json_encode($rs));
+}
+///////////////
+?>

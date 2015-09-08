@@ -1,0 +1,46 @@
+<?php 
+session_start();
+require("../modelos/modelo.registrar_evaluacion.php");
+$mensaje=array();
+$rs=array();
+//////////////////////////////////////////////////////////////
+if(isset($_POST["id_evaluacion"])){
+	if($_POST["id_evaluacion"]!="")
+	{
+		$id_evaluacion=$_POST["id_evaluacion"];
+	}else
+	{
+		$id_evaluacion="";
+	}	
+}else
+{
+	$id_evaluacion="";
+}
+if(isset($_POST["unidad"])){
+	if($_POST["unidad"]!="")
+	{
+		$unidad=$_POST["unidad"];
+	}else
+	{
+		$unidad='';
+	}	
+}
+else
+{
+	$unidad='';
+}
+///////////////////////////////////////////////////////////////
+//declaro la clase
+$obj_evaluacion=new evaluacion();
+$rs=$obj_evaluacion->consultar_evalua($id_evaluacion,$unidad);
+//die(json_encode($rs));
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}
+else
+{
+	die(json_encode($rs));
+}
+?>

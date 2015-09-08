@@ -1,0 +1,49 @@
+<?php
+session_start();
+require("../modelos/modelo.tipo_estudio.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+$mensaje=array();
+$rs=array();
+if(isset($_POST["modalidad_tipo_estudio"]))
+{
+	if($_POST["modalidad_tipo_estudio"]!="")
+	{
+		$tipo_estudio=new tipo_estudio();
+		if($_POST["id_modalidad"]=="")
+		{
+			$id_modalidad=0;
+		}
+		else
+		{
+			$id_modalidad=$_POST["id_modalidad"];
+		}	
+		$rs=$tipo_estudio->registrar_tipo_estudio($id_modalidad,$_POST["modalidad_tipo_estudio"]);
+		if($rs[0][0]=="error")
+		{
+			$mensaje[0]="error_bd";
+		}else
+		{
+			$mensaje[0]="registro_exitoso";
+			$mensaje[1]=$rs[0][0];
+			/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+		    $auditoria_mod=new auditoria("modalidad estudio","actualizacion modalidad de estudio");
+		    $auditoria=$auditoria_mod->registrar_auditoria();
+		    if($auditoria==false)
+		    {
+		        $mensaje[0]='error_auditoria';
+		        die(json_encode($mensaje)); 
+		    }
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		}	
+	}
+	else
+	{	
+		$mensaje[0]="campos_blancos";
+	}	
+}else
+{
+	$mensaje[0]="campos_blancos2";
+}
+die(json_encode($mensaje));
+?>

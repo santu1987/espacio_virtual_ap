@@ -1,0 +1,45 @@
+<?php
+session_start();
+require("../modelos/modelo.registrar_evaluacion.php");
+require("../modelos/modelo.registrar_auditoria.php"); 
+//--variables
+$mensaje=array();
+$rs=array();
+//--Filtro
+if(isset($_POST["aula"])){ if($_POST["aula"]!=""){ $aula=$_POST["aula"]; } }else{ $aula="";}
+//--
+if($aula=="")
+{
+	$mensaje[0]="campos_blancos";
+	die(json_encode($mensaje));
+}
+$obj_ev=new evaluacion();
+$rs=$obj_ev->procesar_evaluacion($aula);
+//die(json_encode($rs));
+//--
+if($rs=="error")
+{
+	$mensaje[0]="error";
+	die(json_encode($mensaje));
+}
+else
+if($rs[0][0]=='0')
+{
+	$mensaje[0]="no_proceso";
+	die(json_encode($mensaje));
+}	
+else
+{
+	/////////////////////////////////////////////////--AUDITORIA--///////////////////////////////////////
+    $auditoria_evaluacion=new auditoria("Procesar notas","Generar Notas finales(aula:".$aula.")");
+    $auditoria=$auditoria_evaluacion->registrar_auditoria();
+    if($auditoria==false)
+    {
+        $mensaje[0]='error_auditoria';
+        die(json_encode($mensaje)); 
+    }
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	$mensaje[0]="registro_exitoso";
+	die(json_encode($mensaje));
+}
+?>

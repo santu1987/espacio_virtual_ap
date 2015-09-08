@@ -1,0 +1,30 @@
+<?php
+session_start();
+require("../modelos/modelo.registrar_anotaciones.php");
+$mensaje=array();
+if((isset($_POST["id_unidad"]))&&(isset($_POST["id_aula"])))
+{
+	if((($_POST["id_unidad"])!="")&&(($_POST["id_aula"])!=""))
+	{
+		$id_unidad=$_POST["id_unidad"];
+		$id_aula=$_POST["id_aula"];
+		$anotacion_texto=$_POST["anotaciones"];
+	}	
+}else
+{
+	$mensaje[0]="campos_blancos";
+	die(json_encode($mensaje));
+}
+$obj_eva=new Anotaciones();
+$rs=$obj_eva->consultar_anotaciones_unidades($id_unidad,$id_aula);
+//die(json_encode($rs));
+if($rs=="error")
+{
+	$mensaje[0]="error_bd";
+	die(json_encode($mensaje));
+}else
+{
+	$mensaje[0]=$rs[0][0];
+	die(json_encode($mensaje));
+}	
+?>
